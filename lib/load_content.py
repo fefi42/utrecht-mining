@@ -47,8 +47,9 @@ class ContentLoader:
     def download_pdf(self, url, file_name):
         """ Download pdf into download folder
 
-        :param url:
-        :return:
+        :param url: of the pdf that should be loaded
+        :param file_name: the name of the file, spaces will be replaced by underscores
+        :return: Path to the file (including folder)
         """
         file_name = file_name.replace(" ", "_")
 
@@ -68,7 +69,10 @@ class ContentLoader:
         website = self.load_website(url)
         links = parse_pdf_links_from_html(website)
         # Download all the pdfs and save them in the file
-        for i in range(len(links)):
+        n = len(links)
+        print(f"Found {n} links on the website, starting to download them.")
+        for i in range(n):
+            print(f"loading {i}/{n}")
             links[i]["file"] = self.download_pdf(links[i]["url"], links[i]["name"])
 
         return links

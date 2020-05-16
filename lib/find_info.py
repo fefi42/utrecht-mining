@@ -32,7 +32,6 @@ def parse_pdf_links_from_html(html):
     return links_to_pdfs
 
 
-
 def find_in_pdf(file_path, key_words):
     """
 
@@ -49,7 +48,7 @@ def find_in_pdf(file_path, key_words):
 
     with open(file_path, 'rb') as pdf_file:
         # Parse the pdf
-        #pdf_reader = PyPDF2.PdfFileReader(pdf_file)
+        # package PyPDF2 does not work correctly use pdftotext instead
         pdf_document = pdftotext.PDF(pdf_file)
 
         # Go over all pdf pages
