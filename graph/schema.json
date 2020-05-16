@@ -1,0 +1,77 @@
+{
+  "things": {
+    "@context": "",
+    "type": "thing",
+    "name": "utrecht",
+    "maintainer": "fefi42",
+    "classes": [
+      {
+        "class": "Document",
+        "description": "Een pdf op de gemeente agenda",
+        "keywords": [],
+        "properties": [
+          {
+            "name": "naam",
+            "description": "Naam van deze document",
+            "dataType": [
+              "text"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          },
+          {
+            "name": "url",
+            "description": "url van deze document",
+            "dataType": [
+              "string"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          },
+          {
+            "name": "heeftPaginas",
+            "description": "Paginas van deze document",
+            "dataType": [
+              "Pagina"
+            ],
+            "cardinality": "many",
+            "keywords": []
+          }
+        ]
+      },
+      {
+        "class": "Pagina",
+        "description": "Een pagina in een document",
+        "keywords": [],
+        "properties": [
+          {
+            "name": "nummer",
+            "description": "Pagina nummer",
+            "dataType": [
+              "number"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          },
+          {
+            "name": "tekst",
+            "description": "Inhoud van deze pagina",
+            "dataType": [
+              "text"
+            ],
+            "cardinality": "atMostOne"
+          },
+          {
+            "name": "vanDocument",
+            "description": "Document waar deze pagina bij hoort",
+            "dataType": [
+              "Document"
+            ],
+            "cardinality": "atMostOne",
+            "keywords": []
+          }
+        ]
+      }
+    ]
+  }
+}

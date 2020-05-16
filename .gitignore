@@ -1,5 +1,6 @@
 # Folders
 downloads/*
+tmp/*
 
 .DS_Store
 .idea

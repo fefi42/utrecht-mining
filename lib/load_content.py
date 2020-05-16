@@ -64,7 +64,8 @@ class ContentLoader:
         """
 
         :param url:
-        :return: list of downloaded documents as key 'file'
+        :return: list of downloaded documents as key 'file' also containing 'name' and 'url'
+        :rtype: list of dict
         """
         website = self.load_website(url)
         links = parse_pdf_links_from_html(website)
